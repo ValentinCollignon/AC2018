@@ -4,31 +4,30 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AlbousBroder {
-	Graph graph;
+	
 	public AlbousBroder(Graph g) {
-		graph=g;
+		
 	}
 	
-	public Graph getArbreCouvant(){
+	public static Graph getArbreCouvant(Graph graph){
 		int nbSommet=graph.vertices();
-		Graph arbre = new Graph (nbSommet);
+		Graph arbre = new Graph (graph);
 		ArrayList <Integer> sommetVisite= new ArrayList<>();
 		Random r = new Random();
 		int sommetEnCour= r.nextInt(nbSommet);
 		sommetVisite.add(sommetEnCour);
 		while( sommetVisite.size()<nbSommet){
-			Edge e = adjAleatoire(graph.adj(sommetEnCour),r);
+			Edge e = adjAleatoire(arbre.adj(sommetEnCour),r);
 			if(nAPasEteVisite(sommetVisite,e.other(sommetEnCour))){
-				arbre.addEdge(e);
 				e.used=true;
 				sommetEnCour = e.other(sommetEnCour);
 				sommetVisite.add(sommetEnCour);
 			}
 		}
-		return graph;
+		return arbre;
 	}
 
-	private boolean nAPasEteVisite(ArrayList<Integer> sommetVisite, int sommetEnCour) {
+	private static boolean nAPasEteVisite(ArrayList<Integer> sommetVisite, int sommetEnCour) {
 		boolean b= true;
 		for (int i: sommetVisite){
 			if (i==sommetEnCour)
@@ -37,7 +36,7 @@ public class AlbousBroder {
 		return b;
 	}
 
-	private Edge adjAleatoire(ArrayList<Edge> adj, Random r) {
+	private static Edge adjAleatoire(ArrayList<Edge> adj, Random r) {
 		
 		return adj.get(r.nextInt(adj.size()));
 	}

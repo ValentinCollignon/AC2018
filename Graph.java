@@ -29,6 +29,24 @@ class Graph{
 		 coordY[v] = 0;
          }
     
+   public Graph(Graph graph) {
+	     this.V = graph.vertices();
+	     this.E = 0;
+	     adj = (ArrayList<Edge>[]) new ArrayList[V];
+	     for (int v= 0; v < V; v++)
+		 adj[v] = new ArrayList<Edge>();
+	     coordX = new int[V];
+	     coordY = new int[V];
+	     for (int v= 0; v < V; v++){
+	    	setCoordinate(v, graph.coordX[v], graph.coordY[v]);
+	     }
+	     
+	     for(Edge e:graph.edges()){
+	    	 addEdge(new Edge(e));
+	     }
+   }
+
+
    public int vertices()
          {
                 return V;

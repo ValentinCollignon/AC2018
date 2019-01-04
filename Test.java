@@ -113,16 +113,16 @@ public class Test{
     
     public static void main(String[] args) {
 	int size = 3;
-	Graph G = Graph.Grid(size);
-	AlbousBroder a= new AlbousBroder(G);
+	Graph G = Graph.example();
 	Display d = new Display();
-	/*d.setImage(G.toImage());
-	Display d2 = new Display();*/
-	d.setImage(a.getArbreCouvant().toImage());
+	d.setImage(G.toImage());
+	Display d2 = new Display();
+	d2.setImage(Kruskal.getArbreCouvant(G).toImage());
 
 	System.out.println("appuyez sur une touche");
 	new Scanner(System.in).nextLine();
 	d.close();
+	d2.close();
 	printLaby(G,size, "toto.tex");
 	
 	

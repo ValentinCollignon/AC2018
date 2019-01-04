@@ -11,7 +11,13 @@ class Edge
 	this.used = false;
     }
     
-    final int other(int v)
+    public Edge(Edge e) {
+    	this.from = e.from;
+    	this.to = e.to;
+    	this.used = false;
+	}
+
+	final int other(int v)
     {
 	if (this.from == v) return this.to; else return this.from;
     }    
