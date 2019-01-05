@@ -21,7 +21,7 @@ public class Kruskal {
 	}
 
 	private static boolean ilYAUnCheminPris(int from, int to, Graph arbre, int cmp) {
-		
+//si les 2 sommets sont déjà attachée à une arrête utilisé dans l'arbre alors il y a deja un chemin pris
 		// faux a refaire
 		/*if (cmp>arbre.edges().size())
 			return true;
