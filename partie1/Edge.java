@@ -1,4 +1,4 @@
-package AC2018;
+package AC2018.partie1;
 class Edge
 {
    int from;

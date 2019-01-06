@@ -1,4 +1,4 @@
-package AC2018;
+package AC2018.partie1;
 import java.util.ArrayList;
 import java.io.*;
 import javax.swing.*;
