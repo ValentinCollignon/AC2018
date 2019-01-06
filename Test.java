@@ -117,8 +117,11 @@ public class Test{
 	Display d = new Display();
 	d.setImage(G.toImage());
 	Display d2 = new Display();
-	d2.setImage(Kruskal.getArbreCouvant(G).toImage());
+	d2.setImage(AlbousBroder.getArbreCouvant(G).toImage());
 
+	System.out.println("appuyez sur une touche");
+	new Scanner(System.in).nextLine();
+	d.setImage(AlbousBroder.getArbreCouvant(G).toImage());
 	System.out.println("appuyez sur une touche");
 	new Scanner(System.in).nextLine();
 	d.close();
