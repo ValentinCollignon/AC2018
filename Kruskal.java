@@ -47,7 +47,7 @@ public class Kruskal {
 			if (b)
 				return true;
 		}
-		System.out.println(precedent.toString() + " : "+b);
+		
 		return false;
 	}
 
