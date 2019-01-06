@@ -240,11 +240,11 @@ public class Test {
 		d.close();
 		d2.close();*/
 		
-		
+		Test.testMillion(0);//question 3
+		Test.testMillion(1);//question 5
 		//printLaby(AlbousBroder.getArbreCouvant(G), size, "toto.tex");
 		creerLabyrintheKruskal(size,"kruskal.tex");
 		creerLabyrintheAlbousBroder(size, "AlbousBroder.tex");
-		//Test.testMillion(0);
-
+		
 	}
 }
