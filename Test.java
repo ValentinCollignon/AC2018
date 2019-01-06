@@ -248,8 +248,12 @@ public class Test {
 		//Test.testMillion(1);
 
 		d2.close();*/
-		
+		System.out.println("Test de l'algorithme de Kruskal 1 millions de fois sur G1");
+		System.out.println("type d'arbre : nombre d'apparition");
 		Test.testMillion(0);//question 3
+		System.out.println();
+		System.out.println("Test de l'algorithme de Aldous-Broder 1 millions de fois sur G1");
+		System.out.println("type d'arbre : nombre d'apparition");
 		Test.testMillion(1);//question 5
 		//printLaby(AlbousBroder.getArbreCouvant(G), size, "toto.tex");
 		creerLabyrintheKruskal(size,"kruskal.tex");
