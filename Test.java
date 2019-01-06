@@ -112,8 +112,8 @@ public class Test{
     }	
     
     public static void main(String[] args) {
-	int size = 3;
-	Graph G = Graph.example();
+	int size = 20;
+	Graph G = Graph.Grid(size);
 	Display d = new Display();
 	//d.setImage(G.toImage());
 	Display d2 = new Display();
@@ -127,7 +127,7 @@ public class Test{
 	new Scanner(System.in).nextLine();
 	d.close();
 	d2.close();
-	printLaby(G,size, "toto.tex");
+	printLaby(Kruskal.getArbreCouvant(G),size, "toto.tex");
 	
 	
     }

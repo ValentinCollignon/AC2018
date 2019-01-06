@@ -1,0 +1,7 @@
+Partie 2 :
+Q9 :
+Il existe K!/(K-N)! combinaison de couleurs
+
+Q10 : 
+Comme il ne connait pas les couleurs qui sont bonne il reste autant de combinaison possible que dans la question 9
+ 
