@@ -11,6 +11,7 @@ public class Test {
 
 	public static final int KRUSKAL = 0;
 	public static final int ALBOUSBRODER = 1;
+	public static final int WILSON = 2 ;
 
 	public static void printLaby(Graph G, int size, String file) {
 		{
@@ -179,6 +180,9 @@ public class Test {
     		case ALBOUSBRODER:
     			g=AlbousBroder.getArbreCouvant(Graph.example());
     			break;
+    		case WILSON:
+    			g=Wilson.getArbreCouvant(Graph.example());
+    			break;
     		}
     		
     		if(g.equals(arbre8))
@@ -226,28 +230,28 @@ public class Test {
 
 		
 		int size = 16;
-		/*Graph G = Graph.example();
+		Graph G = Graph.example();
 		Display d = new Display();
 		// d.setImage(G.toImage());
 		Display d2 = new Display();
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 20; i++) {
 
-			d2.setImage(Wilson.getArbreCouvant(G).toImage());
+			//d2.setImage(Wilson.getArbreCouvant(G).toImage());
 
 			d2.setImage(AlbousBroder.getArbreCouvant(G).toImage());
 
 			System.out.println("appuyez sur une touche");
 			new Scanner(System.in).nextLine();
 		}
-		// d.setImage(AlbousBroder.getArbreCouvant(G).toImage());
+		//d.setImage(AlbousBroder.getArbreCouvant(G).toImage());
 		System.out.println("appuyez sur une touche");
 		new Scanner(System.in).nextLine();
 		d.close();
-		printLaby(G, size, "toto.tex");
+		//printLaby(G, size, "toto.tex");
 		
 		//Test.testMillion(1);
 
-		d2.close();*/
+		d2.close();/*
 		System.out.println("Test de l'algorithme de Kruskal 1 millions de fois sur G1");
 		System.out.println("type d'arbre : nombre d'apparition");
 		Test.testMillion(0);//question 3
@@ -258,6 +262,6 @@ public class Test {
 		//printLaby(AlbousBroder.getArbreCouvant(G), size, "toto.tex");
 		creerLabyrintheKruskal(size,"kruskal.tex");
 		creerLabyrintheAlbousBroder(size, "AlbousBroder.tex");
-		
+		*/
 	}
 }
