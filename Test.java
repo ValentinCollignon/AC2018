@@ -223,6 +223,7 @@ public class Test {
 	
 
 	public static void main(String[] args) {
+
 		
 		int size = 16;
 		/*Graph G = Graph.example();
@@ -230,7 +231,11 @@ public class Test {
 		// d.setImage(G.toImage());
 		Display d2 = new Display();
 		for (int i = 0; i < 1; i++) {
+
+			d2.setImage(Wilson.getArbreCouvant(G).toImage());
+
 			d2.setImage(AlbousBroder.getArbreCouvant(G).toImage());
+
 			System.out.println("appuyez sur une touche");
 			new Scanner(System.in).nextLine();
 		}
@@ -238,6 +243,10 @@ public class Test {
 		System.out.println("appuyez sur une touche");
 		new Scanner(System.in).nextLine();
 		d.close();
+		printLaby(G, size, "toto.tex");
+		
+		//Test.testMillion(1);
+
 		d2.close();*/
 		
 		Test.testMillion(0);//question 3
