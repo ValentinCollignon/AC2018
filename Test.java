@@ -5,6 +5,8 @@ import java.io.*;
 
 import java.util.*;
 
+import javax.security.auth.login.CredentialExpiredException;
+
 public class Test {
 
 	public static final int KRUSKAL = 0;
@@ -168,8 +170,7 @@ public class Test {
 
     	int cmp1=0,cmp2=0,cmp3=0,cmp4=0,cmp5=0,cmp6=0,cmp7=0,cmp8=0;
     	
-    	for (int i=0 ; i<100; i++){
-    		System.out.println(i);
+    	for (int i=0 ; i<1000000; i++){
     		Graph g=null;
     		switch(algo){
     		case KRUSKAL:
@@ -211,17 +212,30 @@ public class Test {
 		System.out.println("arbre de type 8 : "+cmp8);
 
 	}
-	
+	public static void creerLabyrintheKruskal(int size,String nomFichier) {
+		Graph G = Graph.Grid(size);
+		printLaby(Kruskal.getArbreCouvant(G), size, nomFichier);
+	}
+	public static void creerLabyrintheAlbousBroder(int size,String nomFichier) {
+		Graph G = Graph.Grid(size);
+		printLaby(AlbousBroder.getArbreCouvant(G), size, nomFichier);
+	}
 	
 
 	public static void main(String[] args) {
-		int size = 3;
-		Graph G = Graph.example();
+
+		
+		int size = 16;
+		/*Graph G = Graph.example();
 		Display d = new Display();
 		// d.setImage(G.toImage());
 		Display d2 = new Display();
 		for (int i = 0; i < 1; i++) {
+
 			d2.setImage(Wilson.getArbreCouvant(G).toImage());
+
+			d2.setImage(AlbousBroder.getArbreCouvant(G).toImage());
+
 			System.out.println("appuyez sur une touche");
 			new Scanner(System.in).nextLine();
 		}
@@ -229,10 +243,17 @@ public class Test {
 		System.out.println("appuyez sur une touche");
 		new Scanner(System.in).nextLine();
 		d.close();
-		d2.close();
 		printLaby(G, size, "toto.tex");
 		
 		//Test.testMillion(1);
+
+		d2.close();*/
+		
+		
+		//printLaby(AlbousBroder.getArbreCouvant(G), size, "toto.tex");
+		creerLabyrintheKruskal(size,"kruskal.tex");
+		creerLabyrintheAlbousBroder(size, "AlbousBroder.tex");
+		//Test.testMillion(0);
 
 	}
 }
