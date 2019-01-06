@@ -164,5 +164,28 @@ class Graph{
 	catch (IOException e)
 	    {
 	    }                                             
-    }    
+    }   
+    
+    public boolean equals(Object o){
+    	boolean b =true;
+    	if (o.getClass()!=getClass()){
+    		b=false;
+    	}
+    	Graph g = (Graph)o;
+    	if (V!=g.V){
+    		b=false;
+    	}
+    	int cmp =0;
+    	for (Edge e: edges()){
+    		for (Edge e2: g.edges()){
+        		if (e.equals(e2)){
+		        	cmp++;
+        		}	
+        	}
+    	}
+    	if (cmp != edges().size())
+    		b = false;
+		return b;
+    	
+    }
 }

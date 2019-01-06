@@ -24,4 +24,20 @@ class Edge
 	public String toString(){
 		return ("from " + from +" to "+ to +" : " + used);
 	}
+	
+	 public boolean equals(Object o){
+	    	
+	    	if (o.getClass()!=getClass()){
+	    		return false;
+	    	}
+	    	Edge e = (Edge)o;
+	    	if ((from != e.from && from != e.to)||(to != e.from && to != e.to)){
+	    		return false;
+	    	}
+	    	
+	    	if (used!=e.used)
+	    		return false;
+			return true;
+	    	
+	    }
 }

@@ -17,7 +17,8 @@ public class AlbousBroder {
 		int sommetEnCour= r.nextInt(nbSommet);
 		sommetVisite.add(sommetEnCour);
 		while( sommetVisite.size()<nbSommet){
-			Edge e = adjAleatoire(arbre.adj(sommetEnCour),r);
+			ArrayList<Edge> adj = arbre.adj(sommetEnCour);
+			Edge e = adj.get(r.nextInt(adj.size()));//adjAleatoire(arbre.adj(sommetEnCour),r);
 			if(nAPasEteVisite(sommetVisite,e.other(sommetEnCour))){
 				e.used=true;
 				sommetEnCour = e.other(sommetEnCour);
