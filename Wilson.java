@@ -62,6 +62,7 @@ public class Wilson {
 	private static void supressionCycle(ArrayList<Edge> edges) {
 		boolean b = false;
 		int j; 
+		System.out.println(edges);
 		for (int i=0;i < edges.size();i++){
 			j=i+1;
 			b=false;
@@ -84,7 +85,7 @@ public class Wilson {
 		for(int k=j;k<edges.size();k++){
 			edg.add(edges.get(k));
 		}
-		return null;
+		return edg;
 	}
 
 
@@ -101,17 +102,19 @@ public class Wilson {
 	}
 
 
-	private static ArrayList<Edge> marcheAlea(Graph arbre, Integer sommet, ArrayList<Integer> sommetsVisitees) {
-		ArrayList<Edge> edges = new ArrayList<>();
+	private static ArrayList<Edge> marcheAlea(Graph arbre, int sommet, ArrayList<Integer> sommetsVisitees) {
+		ArrayList<Edge> edg = new ArrayList<>();
+		ArrayList<Edge> adj;
+		Edge e ;
 		Random r= new Random();
 		do {
-			ArrayList<Edge> adj = arbre.adj(sommet);
-			Edge e =   adj.get(r.nextInt(adj.size()));
-			edges.add(e);
+			adj = arbre.adj(sommet);
+			e =   adj.get(r.nextInt(adj.size()));
+			edg.add(e);
 			sommetsVisitees.add(sommet);
 			sommet = e.other(sommet);
 		}while (sommetsVisitees.contains(sommet));
-		return edges;
+		return edg;
 	}
 	
 }
