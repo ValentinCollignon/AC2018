@@ -115,13 +115,14 @@ public class Test{
 	int size = 3;
 	Graph G = Graph.example();
 	Display d = new Display();
-	d.setImage(G.toImage());
+	//d.setImage(G.toImage());
 	Display d2 = new Display();
-	d2.setImage(AlbousBroder.getArbreCouvant(G).toImage());
-
+	for(int i =0 ; i<20 ;i++){
+	d2.setImage(Kruskal.getArbreCouvant(G).toImage());
 	System.out.println("appuyez sur une touche");
 	new Scanner(System.in).nextLine();
-	d.setImage(AlbousBroder.getArbreCouvant(G).toImage());
+	}
+	//d.setImage(AlbousBroder.getArbreCouvant(G).toImage());
 	System.out.println("appuyez sur une touche");
 	new Scanner(System.in).nextLine();
 	d.close();

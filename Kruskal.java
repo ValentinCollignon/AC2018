@@ -16,21 +16,22 @@ public class Kruskal {
 	}
 
 	private static boolean peutEtrePrise(Graph arbre, Edge e) {
-		return (!ilYAUnCheminPris(e.from,e.to,arbre,0));
+		return (!ilYAUnCheminPris(e.from,e.to,arbre,e));
 
 	}
 
-	private static boolean ilYAUnCheminPris(int from, int to, Graph arbre, int cmp) {
+	private static boolean ilYAUnCheminPris(int from, int to, Graph arbre, Edge precedent) {
 //si les 2 sommets sont déjà attachée à une arrête utilisé dans l'arbre alors il y a deja un chemin pris
 		// faux a refaire
-		/*if (cmp>arbre.edges().size())
-			return true;
+
 		ArrayList<Edge> edges= new ArrayList<>();
 		boolean b = false;
 		for (Edge e : arbre.adj(from)){
-			if (e.used){
-				b=true;
-				edges.add(e);
+			if (e!= precedent){
+				if (e.used){
+					b=true;
+					edges.add(e);
+				}
 			}
 		}
 		
@@ -41,11 +42,12 @@ public class Kruskal {
 			if (e.other(from)==to){
 				return true;
 			}
-			cmp++;
-			b=(b&& ilYAUnCheminPris(e.other(from) , to, arbre,cmp));
+			b= true;
+			b=(b&& ilYAUnCheminPris(e.other(from) , to, arbre,e) );
 			if (b)
 				return true;
-		}*/ 
+		}
+		System.out.println(precedent.toString() + " : "+b);
 		return false;
 	}
 
