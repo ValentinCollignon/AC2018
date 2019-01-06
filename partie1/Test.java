@@ -230,7 +230,7 @@ public class Test {
 
 		
 		int size = 16;
-		Graph G = Graph.example();
+		/*Graph G = Graph.example();
 		Display d = new Display();
 		// d.setImage(G.toImage());
 		Display d2 = new Display();
@@ -251,7 +251,8 @@ public class Test {
 		
 		//Test.testMillion(1);
 
-		d2.close();/*
+		d2.close();*/
+		
 		System.out.println("Test de l'algorithme de Kruskal 1 millions de fois sur G1");
 		System.out.println("type d'arbre : nombre d'apparition");
 		Test.testMillion(0);//question 3
@@ -262,6 +263,6 @@ public class Test {
 		//printLaby(AlbousBroder.getArbreCouvant(G), size, "toto.tex");
 		creerLabyrintheKruskal(size,"kruskal.tex");
 		creerLabyrintheAlbousBroder(size, "AlbousBroder.tex");
-		*/
+		
 	}
 }
