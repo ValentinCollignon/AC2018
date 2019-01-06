@@ -97,6 +97,8 @@ public class Test {
 				writer.close();
 			} catch (IOException e) {
 			}
+
+
 		}
 
 	}
@@ -166,7 +168,8 @@ public class Test {
 
     	int cmp1=0,cmp2=0,cmp3=0,cmp4=0,cmp5=0,cmp6=0,cmp7=0,cmp8=0;
     	
-    	for (int i=0 ; i<6; i++){
+    	for (int i=0 ; i<100; i++){
+    		System.out.println(i);
     		Graph g=null;
     		switch(algo){
     		case KRUSKAL:
