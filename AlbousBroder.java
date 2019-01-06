@@ -40,5 +40,6 @@ public class AlbousBroder {
 		
 		return adj.get(r.nextInt(adj.size()));
 	}
+	
 
 }

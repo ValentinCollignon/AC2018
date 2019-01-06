@@ -208,6 +208,8 @@ public class Test {
 		System.out.println("arbre de type 8 : "+cmp8);
 
 	}
+	
+	
 
 	public static void main(String[] args) {
 		int size = 3;
