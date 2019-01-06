@@ -28,34 +28,90 @@ public class Wilson {
 		
 		Graph arbre = new Graph(graph);
 		int nbSommet = graph.vertices();
-		ArrayList<Edge> edges = arbre.edges();
+		ArrayList<Edge> edges;
 		ArrayList<Integer> sommetsNonVisitees = new ArrayList<>();
-		for (int i = 0; i < nbSommet; i++) {
+		ArrayList<Integer> sommetsVisitees = new ArrayList<>();
+		for (int i = 0; i < nbSommet-1; i++) {
 			sommetsNonVisitees.add(i);
 		}
-		int sommetEnCour = 0;
-		supprElement(sommetsNonVisitees,sommetEnCour);
-		Random r = new Random();
-		while(sommetsNonVisitees.size()>=0) {
-			sommetEnCour= r.nextInt(sommetsNonVisitees.size());
-		}
-		
-		/*		
-		
-		Random r = new Random();
-		int sommetEnCour= r.nextInt(nbSommet);
-		sommetVisite.add(sommetEnCour);
-		while( sommetVisite.size()<nbSommet){
-			Edge e = adjAleatoire(arbre.adj(sommetEnCour),r);
-			if(nAPasEteVisite(sommetVisite,e.other(sommetEnCour))){
-				e.used=true;
-				sommetEnCour = e.other(sommetEnCour);
-				sommetVisite.add(sommetEnCour);
+		sommetsVisitees.add(nbSommet-1);
+		do{
+		edges = marcheAlea(arbre,sommetsNonVisitees.get(0),sommetsVisitees);
+		sommetsNonVisitees = majSommetsVisitees(sommetsNonVisitees,sommetsVisitees);
+		supressionCycle(edges);
+		addEdgeArbre(arbre,edges);
+		}while(sommetsNonVisitees.size()>0);
+				
+		return arbre;
+	}
+
+
+	private static void addEdgeArbre(Graph arbre, ArrayList<Edge> edges) {
+		ArrayList<Edge> eds = arbre.edges();
+		for(Edge e1: edges){
+			for(Edge e2: eds){
+				if(e1.equals(e2)){
+					e2.used=true;
+				}
 			}
 		}
-		*/
 		
-		return arbre;
+	}
+
+
+	private static void supressionCycle(ArrayList<Edge> edges) {
+		boolean b = false;
+		int j; 
+		for (int i=0;i < edges.size();i++){
+			j=i+1;
+			b=false;
+			while (!b && j<edges.size()){
+				b=edges.get(i).equals(edges.get(j));
+				j++;
+			}
+			if(b){
+				edges= suppretion(edges,i,j);
+			}
+		}
+	}
+
+
+	private static ArrayList<Edge> suppretion(ArrayList<Edge> edges, int i, int j) {
+		ArrayList<Edge> edg= new ArrayList<>();
+		for(int k=0;k<i;k++){
+			edg.add(edges.get(k));
+		}
+		for(int k=j;k<edges.size();k++){
+			edg.add(edges.get(k));
+		}
+		return null;
+	}
+
+
+	private static ArrayList<Integer> majSommetsVisitees(ArrayList<Integer> sommetsNonVisitees, ArrayList<Integer> sommetsVisitees) {
+		ArrayList<Integer> sommetsNV = new ArrayList<>();
+		for(int i:sommetsNonVisitees ){
+			if(!sommetsVisitees.contains(i)){
+				sommetsNV.add(i);
+			}
+		}
+		
+		return sommetsNV;
+		
+	}
+
+
+	private static ArrayList<Edge> marcheAlea(Graph arbre, Integer sommet, ArrayList<Integer> sommetsVisitees) {
+		ArrayList<Edge> edges = new ArrayList<>();
+		Random r= new Random();
+		do {
+			ArrayList<Edge> adj = arbre.adj(sommet);
+			Edge e =   adj.get(r.nextInt(adj.size()));
+			edges.add(e);
+			sommetsVisitees.add(sommet);
+			sommet = e.other(sommet);
+		}while (sommetsVisitees.contains(sommet));
+		return edges;
 	}
 	
 }
