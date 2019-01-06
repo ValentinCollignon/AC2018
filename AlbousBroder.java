@@ -14,16 +14,18 @@ public class AlbousBroder {
 		Graph arbre = new Graph (graph);
 		ArrayList <Integer> sommetVisite= new ArrayList<>();
 		Random r = new Random();
+		Edge e = null;
 		int sommetEnCour= r.nextInt(nbSommet);
 		sommetVisite.add(sommetEnCour);
 		while( sommetVisite.size()<nbSommet){
-			ArrayList<Edge> adj = arbre.adj(sommetEnCour);
-			Edge e = adj.get(r.nextInt(adj.size()));//adjAleatoire(arbre.adj(sommetEnCour),r);
+			
+			e = adjAleatoire(arbre.adj(sommetEnCour),r);
 			if(nAPasEteVisite(sommetVisite,e.other(sommetEnCour))){
 				e.used=true;
-				sommetEnCour = e.other(sommetEnCour);
-				sommetVisite.add(sommetEnCour);
+				
+				sommetVisite.add(e.other(sommetEnCour));
 			}
+			sommetEnCour = e.other(sommetEnCour);
 		}
 		return arbre;
 	}

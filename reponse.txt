@@ -1,3 +1,36 @@
+Parie 1 : 
+Q1 :
+sur brouillon
+
+Q3 : 
+Voici les résultats d'apparition de chaqu'un des arbres avec l'algorithme de Kruskal :
+arbre de type 1 : 116914
+arbre de type 2 : 133672
+arbre de type 3 : 133368
+arbre de type 4 : 116624
+arbre de type 5 : 133467
+arbre de type 6 : 116320
+arbre de type 7 : 116318
+arbre de type 8 : 133317
+On constate que tout les arbres n'ont pas la même probabilité d'apparaître. Les arbres de types 2, 3, 5 et 8 apparaissent beaucoup plus dans l'exemple.
+
+Q5 : 
+En vérifiant de manière expérimentale la probabilité que les 8 arbres couvrants apparaissent nous avons obtenu les résultats suivants:
+
+arbre de type 1 : 124940
+arbre de type 2 : 124911
+arbre de type 3 : 125208
+arbre de type 4 : 125114
+arbre de type 5 : 124737
+arbre de type 6 : 124462
+arbre de type 7 : 124691
+arbre de type 8 : 125937
+
+On constate que nous avons un ordre de grandeur d'un peu plus de 120 000 apparitions par arbre. Donc de manière expérimentale les 8 arbres couvrants on la même probabilité d'apparaître.
+
+Q6 :
+
+
 Partie 2 :
 Q9 :
 Il existe K!/(K-N)! combinaison de couleurs
