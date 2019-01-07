@@ -230,28 +230,6 @@ public class Test {
 
 		
 		int size = 16;
-		/*Graph G = Graph.example();
-		Display d = new Display();
-		// d.setImage(G.toImage());
-		Display d2 = new Display();
-		for (int i = 0; i < 20; i++) {
-
-			//d2.setImage(Wilson.getArbreCouvant(G).toImage());
-
-			d2.setImage(AlbousBroder.getArbreCouvant(G).toImage());
-
-			System.out.println("appuyez sur une touche");
-			new Scanner(System.in).nextLine();
-		}
-		//d.setImage(AlbousBroder.getArbreCouvant(G).toImage());
-		System.out.println("appuyez sur une touche");
-		new Scanner(System.in).nextLine();
-		d.close();
-		//printLaby(G, size, "toto.tex");
-		
-		//Test.testMillion(1);
-
-		d2.close();*/
 		
 		System.out.println("Test de l'algorithme de Kruskal 1 millions de fois sur G1");
 		System.out.println("type d'arbre : nombre d'apparition");
